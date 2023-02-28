@@ -26,7 +26,7 @@ Spring Security, CORS.**
 * Сборщик пакетов - **maven**
 * Для запуска используется **docker, docker-compose**
 * Логирование  - **log4j** (Логируются операции - уровень INFO и ошибки -уровень ERROR).
-Запись логов в файле [**cloud.log**]()
+Запись логов в файле **cloud.log**
 * Протестирован с помощью **Postman**
 
 
@@ -45,7 +45,7 @@ mvn install
 ```
 docker-compose up
 ```
-Проект запустится на порту 8091
+Backend проект запустится на порту **8091**
 
 При запуске приложения из в базе автоматически создадуться 
 
@@ -68,7 +68,7 @@ login: User1@mail.ru, password: user
 
 
 ## **2. Описание и запуск FRONT:**
-- Чтобы установить и запустить frontend следуйте [**инструкции**]().  
+- Чтобы установить и запустить frontend следуйте [**инструкции**](https://github.com/AnnaGubkina/CloudStorage/tree/master/front/netology-diplom-frontend).  
 
 - Проект запустится по ссылке http://localhost:8080/
 
