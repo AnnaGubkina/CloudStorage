@@ -1,0 +1,48 @@
+server:
+  port: 8091
+
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:15432/postgres
+    username: postgres
+    password: postgres
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+    properties:
+      hibernate:
+        default_schema: netology_diploma
+        generate_statistics: true
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+
+  main:
+    allow-circular-references: true
+
+app:
+  jwt:
+    secret: "404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970"
+    expiration: 86400000
+
+  configuration:
+    cors:
+      origins: 'http://localhost:8080'
+      methods: '*'
+      headers: '*'
+      allow-credentials: true
+    threadPoolTaskExecutor:
+      corePoolSize: 50
+      maxPoolSize: 50
+
+
+
+
+
+

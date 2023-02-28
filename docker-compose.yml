@@ -1,0 +1,31 @@
+version: '3.7'
+
+services:
+  app:
+    build: ./
+    ports:
+      - '8091:8091'
+    depends_on:
+      - database
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://database:5432/postgres
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_LIQUIBASE_URL: jdbc:postgresql://database:5432/postgres
+      SPRING_LIQUIBASE_USER: postgres
+      SPRING_LIQUIBASE_PASSWORD: postgres
+  database:
+    image: postgres:alpine
+    container_name: 'postgres'
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_DB: 'postgres'
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: 'postgres'
+
+  #  app_frontend:
+  #        image: cloud-frontend:latest
+  #        ports:
+  #          - 8080:8080
